@@ -1,0 +1,124 @@
+.wf-upload-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 3px;
+
+    &.wf-upload-container-single {
+        width: 300px;
+        min-height: 300px;
+
+        .wf-preview {
+            flex: 1;
+            height: auto;
+        }
+    }
+
+    .wf-drop-zone {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        border: 1px dashed #aaa;
+
+        &.dragover {
+            border-color: #f18021;
+            outline-offset: -17px;
+        }
+    }
+
+    .wf-description {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .wf-loading {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color:rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > div {
+            height: 50px;
+            width: 50px;
+            font-size: 50px;
+            color: #1393cc;
+        }
+    }
+
+    .wf-lock {
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color:rgba(0, 0, 0, 0.1);
+    }
+
+    ~ .invalid-feedback {
+        display: block;
+    }
+}
+
+.wf-preview {
+    width: 100px;
+    height: 100px;
+    margin: 10px 5px;
+    position: relative;
+    border: 1px solid #D6D6D6;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .wf-preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    > .wf-remove-preview {
+        position: absolute;
+        color: red;
+        top: 5px;
+        right: 0;
+        height: 20px;
+        width: 20px;
+    }
+
+    > .wf-preview-file-name {
+        color: #999;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 10px;
+        padding: 0 10px;
+    }
+
+    > .fa.fa-file-o {
+        font-size: 20px;margin-top: 20px;
+    }
+
+    &.select-file > label {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.wf-deletion-input-container {
+    display: none;
+}
+
+/* place lightbox in the center
+#lightboxOverlay { position: fixed !important; top: 0; left: 0; height: 100% !important; width: 100% !important; }
+#lightbox { position: fixed !important; top: 50% !important; transform: translateY(-50%); }
+*/
